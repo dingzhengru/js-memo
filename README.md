@@ -5,7 +5,8 @@
 *   <a href="#閉包closure">閉包(Closure)</a>
 *   <a href="#深拷貝">深拷貝</a>
 *   <a href="#es6-class">ES6 Class</a>
-*   <a href="#非同步平行處理--promise">非同步(平行處理) & Promise</a>
+*   <a href="#非同步平行處理--es6-promise">非同步(平行處理) & Promise</a>
+*   <a href="#es6-generator">ES6 Generator</a>
 ## 型態(Types)
 **String**  
 **Number**  
@@ -101,7 +102,7 @@ class Dog extends Animal {
 let classFoo = new Dog(5);
 classFoo.printInfo(); // this dog age: 1
 ```
-## 非同步(平行處理) & Promise
+## 非同步(平行處理) & ES6 Promise
 **利用Promise可以把事情排好**
 ```
 function promiseTest() {
@@ -122,4 +123,27 @@ promiseTest()
 })
 
 console.log('這個會先印出來(Promise也是非同步)')
+```
+## ES6 Generator
+**用法:方法前面加個"星號"，並且用 yield 設置停止點**  
+
+執行此函數時，每次執行到 yield 就會停下來，且可以傳送一個值至next()  
+相反，也可以用next(x)來傳值，可以用next()讓函數繼續執行，執行到yield又會再停下來  
+next.value可以取到yield傳送過來的值，next.done可以用來判斷函數是否執行完畢
+```
+function *get_counter(){
+  let i = 1;
+  while(true){
+    let x = yield i;
+    i++;
+    console.log(`next傳過來得值 x: ${x}`); //x: next2 ~ next4
+  }
+}
+
+let counter = get_counter();
+
+console.log(counter.next('next1')); // {value: 1, done: false}
+console.log(counter.next('next2')); // {value: 2, done: false}
+console.log(counter.next('next3')); // {value: 3, done: false}
+console.log(counter.next('next4')); // {value: 4, done: false}
 ```
