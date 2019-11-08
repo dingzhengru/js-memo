@@ -9,7 +9,7 @@
 *   <a href="#es6-generator">ES6 Generator</a>
 *   <a href="#await--async">Await & Async</a>
 *   <a href="#this">This</a>
-*   <a href="#Prototype---__proto__">Prototype & __proto__</a>
+*   <a href="#prototype--proto">Prototype & __proto__</a>
 ## 型態(Types)
 **String**  
 **Number**  
