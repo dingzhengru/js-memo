@@ -222,7 +222,7 @@ console.log(this) // window物件
 ### prototype 有點類似其他語言Class的靜態變數與靜態方法(static)
 下面範例兩個實例中的log方法是不同的，就代表佔用了兩塊空間  
 放在prototype的getName就會是一樣的，代表這變數或方法是共享的  
-### __proto__ 會去指向此實體所屬物件的prototype
+### ```__proto__```會去指向此實體所屬物件的prototype
 nick這個 instance 本身並沒有 getName 這個 function。但nick是Person的 instance  
 所以如果在 nick 本身找不到，它就會利用__proto__去找Person.prototype  
 <br>
