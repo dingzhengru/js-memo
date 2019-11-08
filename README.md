@@ -281,6 +281,7 @@ let squaredArray = inputArray.map(x => x * x); // ES6 syntax
 (function() { })(); // IIFE
 ```
 ## call、apply、bind
+### 三個主要目的都一樣: 指定函數的this
 **call: 執行函數，第一個參數放想使用的 this，後面的參數跟一般使用函數一樣**  
 **apply: 跟call一樣，不一樣在於只允許兩個變數傳入，第二個變數等於是原始function的參數陣列(argsArray)**  
 **bind: 綁定這個函數的this**  
