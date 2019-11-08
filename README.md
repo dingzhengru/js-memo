@@ -280,3 +280,23 @@ let squaredArray = inputArray.map(x => x * x); // ES6 syntax
 // ex3: IIFE
 (function() { })(); // IIFE
 ```
+## call、apply、bind
+**call: 執行函數，第一個參數放想使用的 this，後面的參數跟一般使用函數一樣**  
+**apply: 跟call一樣，不一樣在於只允許兩個變數傳入，第二個變數等於是原始function的參數陣列(argsArray)**  
+**bind: 綁定這個函數的this**  
+```
+function wtf(argv0, argv1) {
+  console.log('wtf:', this.v, argv0, argv1);
+}
+var obj = { v: 'I am obj' };
+var obj2 = { v: 'I am obj2' }
+// 如果我們希望這個function能吃到obj的this
+// 可以把function放在物件裡頭
+obj.func = wtf;
+obj.func(1, 2); // obj 1 2
+
+// 或是我們在第一個參數告訴function你的receiver是obj或obj2
+wtf.call(obj, 1, 2); // obj 1 2
+wtf.apply(obj2, [1, 2]); // obj2 1 2
+wtf.bind(obj2)(1, 2); // obj2 1 2
+```
