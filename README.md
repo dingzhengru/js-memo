@@ -5,7 +5,7 @@
 *   <a href="#閉包closure">閉包(Closure)</a>
 *   <a href="#深拷貝">深拷貝</a>
 *   <a href="#es6-class">ES6 Class</a>
-
+*   <a href="#非同步平行處理-&-promise">非同步(平行處理) & Promise</a>
 ## 型態(Types)
 **String**  
 **Number**  
@@ -101,7 +101,7 @@ class Dog extends Animal {
 let classFoo = new Dog(5);
 classFoo.printInfo(); // this dog age: 1
 ```
-## 非同步(平行處理)
+## 非同步(平行處理) & Promise
 **利用Promise可以把事情排好**
 ```
 function promiseTest() {
