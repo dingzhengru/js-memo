@@ -1,8 +1,8 @@
 # Javascript 筆記
 
-*   <a href="#型態(Types)">型態(Types)</a>
+*   <a href="#型態Types">型態(Types)</a>
 *   <a href="#Hoisting">Hoisting</a>
-*   <a href="#閉包(Closure)">閉包(Closure)</a>
+*   <a href="#閉包closure">閉包(Closure)</a>
 *   <a href="#深拷貝">深拷貝</a>
 
 
