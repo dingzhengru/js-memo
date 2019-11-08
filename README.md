@@ -8,7 +8,7 @@
 *   <a href="#非同步平行處理--es6-promise">非同步(平行處理) & Promise</a>
 *   <a href="#es6-generator">ES6 Generator</a>
 *   <a href="#await--async">Await & Async</a>
-
+*   <a href="#this">This</a>
 ## 型態(Types)
 **String**  
 **Number**  
@@ -208,4 +208,37 @@ getAll().then((data) => {
     // 如果中途有執行錯誤，會跑來這邊
     console.log(error);
 })
+```
+
+## This
+### 指向"當前作用域的實體"
+**在網頁的最外層實體就是從 Window 開始**  
+```
+console.log(this) // window物件
+```
+
+## Prototype
+### 有點類似其他語言Class的靜態變數與靜態方法(static)
+
+下面範例兩個實例中的log方法是不同的，就代表佔用了兩塊空間  
+放在prototype的getName就會是一樣的
+```
+function Person(name, age) {
+  this.name = name;
+  this.age = age;
+  this.log = function () {
+    console.log(this.name + ', age:' + this.age);
+  }
+}
+
+Person.prototype.getName = function() {
+  return this.name
+}
+
+let nick = new Person('nick', 18);
+let peter = new Person('peter', 20);
+  
+console.log(nick.log === peter.log) // false
+
+console.log(nick.getName === peter.getName) // true
 ```

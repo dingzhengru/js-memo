@@ -1,6 +1,7 @@
 class Animal {
   constructor(age) {
     this.age = age || 1;
+    console.log(`Animal this: ${JSON.stringify(this)}`)
   }
   printInfo() {
     console.log(`age: ${this.age}`)
