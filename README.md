@@ -9,6 +9,7 @@
 *   <a href="#es6-generator">ES6 Generator</a>
 *   <a href="#await--async">Await & Async</a>
 *   <a href="#this">This</a>
+*   <a href="#Prototype---__proto__">Prototype & __proto__</a>
 ## 型態(Types)
 **String**  
 **Number**  
@@ -217,11 +218,15 @@ getAll().then((data) => {
 console.log(this) // window物件
 ```
 
-## Prototype
-### 有點類似其他語言Class的靜態變數與靜態方法(static)
-
+## Prototype & __proto__
+### prototype 有點類似其他語言Class的靜態變數與靜態方法(static)
 下面範例兩個實例中的log方法是不同的，就代表佔用了兩塊空間  
-放在prototype的getName就會是一樣的
+放在prototype的getName就會是一樣的，代表這變數或方法是共享的  
+### __proto__ 會去指向此實體所屬物件的prototype
+nick這個 instance 本身並沒有 getName 這個 function。但nick是Person的 instance  
+所以如果在 nick 本身找不到，它就會利用__proto__去找Person.prototype    
+**原型鍊**就是在說__proto__一直不斷往上找prototype直到null的鍊(Object.prototype.__proto__)  
+**hasOwnProperty** 可以確認一個屬性是存在 instance 身上，還是存在於它屬於的原型鍊當中  
 ```
 function Person(name, age) {
   this.name = name;
@@ -239,6 +244,12 @@ let nick = new Person('nick', 18);
 let peter = new Person('peter', 20);
   
 console.log(nick.log === peter.log) // false
-
 console.log(nick.getName === peter.getName) // true
+
+console.log(nick.__proto__ === Person.prototype) // true
+console.log(Person.prototype.__proto__ === Object.prototype) // true
+console.log(Object.prototype.__proto__) // null (已經到頂端了)
+
+console.log(nick.hasOwnProperty('getName')); // false
+console.log(nick.__proto__.hasOwnProperty('getName')); // true
 ```
