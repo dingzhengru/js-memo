@@ -224,9 +224,10 @@ console.log(this) // window物件
 放在prototype的getName就會是一樣的，代表這變數或方法是共享的  
 ### __proto__ 會去指向此實體所屬物件的prototype
 nick這個 instance 本身並沒有 getName 這個 function。但nick是Person的 instance  
-所以如果在 nick 本身找不到，它就會利用__proto__去找Person.prototype    
-**原型鍊**就是在說__proto__一直不斷往上找prototype直到null的鍊(Object.prototype.__proto__)  
-**hasOwnProperty** 可以確認一個屬性是存在 instance 身上，還是存在於它屬於的原型鍊當中  
+所以如果在 nick 本身找不到，它就會利用__proto__去找Person.prototype  
+  
+**原型鍊**: 就是在說__proto__一直不斷往上找prototype直到null的鍊(Object.prototype.__proto__)  
+**hasOwnProperty**: 可以確認一個屬性是存在 instance 身上，還是存在於它屬於的原型鍊當中  
 ```
 function Person(name, age) {
   this.name = name;
