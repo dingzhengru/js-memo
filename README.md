@@ -153,7 +153,8 @@ console.log(counter.next('next4')); // {value: 4, done: false}
 ```
 
 ## Await & Async
-### 其實跟Promise.all[]有點像(但all裡面還是平行處理)，不過await實現了同步(會等前一個結束才執行下一個)
+### 其實跟Promise.all[]有點像(但all裡面還是平行處理)  
+### 不過await實現了同步(會等前一個結束才執行下一個)
 **await需要在前面有"async"的函式裡面出現 ex(async getAll())**  
 **這種async function本身也是類似 Promise，在正確執行的情況下 return 會傳回 resolve 可以使用 then 來接收**  
 **中途如果有錯誤，會自動觸發reject，一樣是用catch去接下來處理**
