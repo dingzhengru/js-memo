@@ -301,3 +301,23 @@ wtf.call(obj, 1, 2); // obj 1 2
 wtf.apply(obj2, [1, 2]); // obj2 1 2
 wtf.bind(obj2)(1, 2); // obj2 1 2
 ```
+## Arrow Function(箭頭函式)
+多數時候一般函數無異，但是最大的差別在於 — 其 this 完全綁定在語彙上的位置  
+也就是說在 arrow 裡面的 this 永遠都是語意上的 this  
+不管是誰呼叫他，或是被如何 bind 、 call 、 apply ，他永遠都是拿到原先作用域的 this  
+
+```
+let x = {
+  name: 'foo',
+  hello: function() {
+    setTimeout(() => {
+      console.log(this.name); // foo
+    }, 100);
+
+    setTimeout(function() {
+      console.log(this.name); // ''
+    }, 100);
+  }
+}
+x.hello()
+```
