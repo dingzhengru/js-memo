@@ -4,7 +4,7 @@
 *   <a href="#Hoisting">Hoisting</a>
 *   <a href="#閉包closure">閉包(Closure)</a>
 *   <a href="#深拷貝">深拷貝</a>
-
+*   <a href="#ES6Class">ES6 Class</a>
 
 ## 型態(Types)
 **String**  
@@ -74,4 +74,30 @@ cloneTestB = _.cloneDeep(cloneTestA);
 cloneTestB.name = 'change again'; 
 
 console.log(cloneTestA); // change 沒有被改變
+```
+
+## ES6 Class
+### 事實上這裡的"類別"並非真正的類別，根本上還是使用 Prototype 機制來實作
+**只是單純模擬其他語言的類別寫法，讓程式碼更清楚**
+
+```
+class Animal {
+  constructor(age) {
+    this.age = age || 1;
+  }
+  printInfo() {
+    console.log(`age: ${this.age}`)
+  }
+}
+class Dog extends Animal {
+  constructor() {
+    super(); //super()代表調用父類的構造函數
+  }
+  printInfo() {
+    console.log(`this dog age: ${this.age}`)
+  }
+}
+
+let classFoo = new Dog(5);
+classFoo.printInfo(); // this dog age: 1
 ```

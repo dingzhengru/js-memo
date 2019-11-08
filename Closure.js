@@ -8,5 +8,5 @@ function closureTest() {
   return inner
 }
   
-let foo = closureTest()
-foo()
+let closureFoo = closureTest()
+closureFoo()
