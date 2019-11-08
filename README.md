@@ -267,16 +267,16 @@ function a(){ console.log(123) }() // 錯誤寫法，需用小括號把函數括
 ## "匿名函數"通常用在哪
 **通常用在參數是函數的時候**
 ```
-// ex1
+// ex1: callback
 function a(callback) {
     callback()
 }
 a(function(){})
 
-// ex2
+// ex2: callback
 let squaredArray = inputArray.map(function(x) { return x * x; });
 let squaredArray = inputArray.map(x => x * x); // ES6 syntax
 
-// ex3
+// ex3: IIFE
 (function() { })(); // IIFE
 ```
