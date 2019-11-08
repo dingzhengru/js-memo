@@ -10,6 +10,7 @@
 *   <a href="#await--async">Await & Async</a>
 *   <a href="#this">This</a>
 *   <a href="#prototype--proto">Prototype & __proto__</a>
+*   <a href="#iife">IIFE</a>
 ## 型態(Types)
 **String**  
 **Number**  
@@ -253,4 +254,11 @@ console.log(Object.prototype.__proto__) // null (已經到頂端了)
 
 console.log(nick.hasOwnProperty('getName')); // false
 console.log(nick.__proto__.hasOwnProperty('getName')); // true
+```
+
+## IIFE (Immediately Invoked Function Expression)
+**宣告後馬上執行此函數的寫法**  
+```
+function a(){ console.log(123) }() // 錯誤寫法，需用小括號把函數括起來
+(function a(){ console.log(123) })() // 123
 ```
