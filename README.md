@@ -147,3 +147,59 @@ console.log(counter.next('next2')); // {value: 2, done: false}
 console.log(counter.next('next3')); // {value: 3, done: false}
 console.log(counter.next('next4')); // {value: 4, done: false}
 ```
+
+## Await & Async
+### await 強制把非同步變成同步
+**await需要在前面有"async"的函式裡面出現 ex(async getAll())**  
+**這種async function本身也是類似 Promise，在正確執行的情況下 return 會傳回 resolve 可以使用 then 來接收**  
+**中途如果有錯誤，會自動觸發reject，一樣是用catch去接下來處理**
+```
+function getA() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve('A')
+    }, 1000)
+  })
+}
+
+function getB() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve('B')
+    }, 1000)
+  })
+}
+
+function getC() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve('C')
+    }, 1000)
+  })
+}
+
+async function getAll() {
+    console.log(await getA());
+    console.log(await getB());
+    console.log(await getC());
+    // 如果用原本Promise.then 要讓ABC照順序執行
+    getA().then((data) => {
+        console.log(data);
+        getB().then((data) => {
+            console.log(data);
+            getC().then((data) => {
+                console.log(data);
+            })
+        })
+    })
+
+    return '成功時回傳此，也是用.then()接'
+}
+
+getAll().then((data) => {
+    console.log(data);
+}).catch((error) => {
+    // 如果中途有執行錯誤，會跑來這邊
+    console.log(error);
+})
+```

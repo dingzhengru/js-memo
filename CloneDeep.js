@@ -1,4 +1,3 @@
-
 let cloneTestA = { name: 'ding' };
 let cloneTestB = cloneTestA;
 cloneTestB.name = 'change';
