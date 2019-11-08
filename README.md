@@ -262,3 +262,20 @@ console.log(nick.__proto__.hasOwnProperty('getName')); // true
 function a(){ console.log(123) }() // 錯誤寫法，需用小括號把函數括起來
 (function a(){ console.log(123) })() // 123
 ```
+
+## "匿名函數"通常用在哪
+**通常用在參數是函數的時候**
+```
+// ex1
+function a(callback) {
+    callback()
+}
+a(function(){})
+
+// ex2
+let squaredArray = inputArray.map(function(x) { return x * x; });
+let squaredArray = inputArray.map(x => x * x); // ES6 syntax
+
+// ex3
+(function() { })(); // IIFE
+```
