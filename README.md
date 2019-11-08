@@ -324,3 +324,61 @@ let x = {
 }
 x.hello()
 ```
+
+## Event: 捕獲、冒泡(Capturing, Bubbling)
+### 捕獲: 
+### 冒泡: 觸發內部事件，包著他的外部事件也會被觸發
+**解決冒泡 event.stopPropagation(): 不再讓事件繼續往下傳**  
+
+**點擊list_item_link發生的事件順序**  
+捕獲list => 捕獲list_item => 捕獲list_item_link(target)
+=> 冒泡list_item_link => 冒泡list_item => 冒泡list  
+
+addEventListener的第三個參數可以決定是要接捕獲階段，還是冒泡階段  
+**(true是捕獲, 預設是false 冒泡階段)**  
+html
+```
+<ul id="list">
+  <li id="list_item">
+    <a id="list_item_link" href="#">
+      link
+    </a>
+  </li>
+</ul>
+```
+js
+```
+const $list = document.getElementById('list');
+const $list_item = document.getElementById('list_item');
+const $list_item_link = document.getElementById('list_item_link');
+
+// list 的捕獲
+$list.addEventListener('click', (e) => {
+  console.log('list capturing', e.eventPhase);
+}, true)
+  
+// list 的冒泡
+$list.addEventListener('click', (e) => {
+  console.log('list bubbling', e.eventPhase);
+}, false)
+  
+// list_item 的捕獲
+$list_item.addEventListener('click', (e) => {
+  console.log('list_item capturing', e.eventPhase);
+}, true)
+  
+// list_item 的冒泡
+$list_item.addEventListener('click', (e) => {
+  console.log('list_item bubbling', e.eventPhase);
+}, false)
+  
+// list_item_link 的捕獲
+$list_item_link.addEventListener('click', (e) => {
+  console.log('list_item_link capturing', e.eventPhase);
+}, true)
+  
+// list_item_link 的冒泡
+$list_item_link.addEventListener('click', (e) => {
+  console.log('list_item_link bubbling', e.eventPhase);
+}, false)
+```
