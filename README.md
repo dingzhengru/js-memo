@@ -51,4 +51,4 @@ inner()
 ```
 ### 會用到閉包的情況
 **透過閉包讓 function 能夠有 private 變數(雖然現在有了let)**  
-<img src="https://i.imgur.com/ft2rUd6.png" height="250">
+<img src="https://i.imgur.com/ft2rUd6.png" height="200">
