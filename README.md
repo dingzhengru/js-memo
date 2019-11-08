@@ -7,6 +7,8 @@
 *   <a href="#es6-class">ES6 Class</a>
 *   <a href="#非同步平行處理--es6-promise">非同步(平行處理) & Promise</a>
 *   <a href="#es6-generator">ES6 Generator</a>
+*   <a href="#await--async">Await & Async</a>
+
 ## 型態(Types)
 **String**  
 **Number**  
@@ -103,7 +105,9 @@ let classFoo = new Dog(5);
 classFoo.printInfo(); // this dog age: 1
 ```
 ## 非同步(平行處理) & ES6 Promise
-**利用Promise可以把事情排好**
+**利用Promise可以把事情排好**  
+**多個Promise一起執行可以用Promise.all([p1,p2,p3]).then()(平行處理，不會等前一個結束才執行)**  
+**all() 回傳給then會是一個陣列(所有Promise resolve的集合)**  
 ```
 function promiseTest() {
     return new Promise((resolve, reject) => {
@@ -149,7 +153,7 @@ console.log(counter.next('next4')); // {value: 4, done: false}
 ```
 
 ## Await & Async
-### await 強制把非同步變成同步
+### 其實跟
 **await需要在前面有"async"的函式裡面出現 ex(async getAll())**  
 **這種async function本身也是類似 Promise，在正確執行的情況下 return 會傳回 resolve 可以使用 then 來接收**  
 **中途如果有錯誤，會自動觸發reject，一樣是用catch去接下來處理**

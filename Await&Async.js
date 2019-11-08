@@ -26,6 +26,7 @@ async function getAll() {
     console.log(await getA());
     console.log(await getB());
     console.log(await getC());
+    
     // 如果用原本Promise.then 要讓ABC照順序執行
     getA().then((data) => {
         console.log(data);
