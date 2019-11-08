@@ -326,9 +326,10 @@ x.hello()
 ```
 
 ## Event: 捕獲、冒泡(Capturing, Bubbling)
-### 捕獲: 
-### 冒泡: 觸發內部事件，包著他的外部事件也會被觸發
-**解決冒泡 event.stopPropagation(): 不再讓事件繼續往下傳**  
+**事件順序: 先捕獲，在冒泡**
+**捕獲事件: 最先觸發的事件，會將事件往目標送**   
+**冒泡事件: 當事件到目標時會觸發，會再將事件往回送**  
+**解決內部事件觸發到外部事件 event.stopPropagation(): 不再讓事件繼續往下傳**  
 
 **點擊list_item_link發生的事件順序**  
 捕獲list => 捕獲list_item => 捕獲list_item_link(target)
