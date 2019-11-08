@@ -12,6 +12,9 @@
 *   <a href="#prototype--proto">Prototype & __proto__</a>
 *   <a href="#iife-immediately-invoked-function-expression">IIFE (Immediately Invoked Function Expression)</a>
 *   <a href="#匿名函數通常用在哪">匿名函數通常用在哪</a>
+*   <a href="#callapplybind">call、apply、bind</a>
+*   <a href="#arrow-function箭頭函式">Arrow-Function(箭頭函式)</a>
+
 ## 型態(Types)
 **String**  
 **Number**  
