@@ -11,6 +11,7 @@
 *   <a href="#this">This</a>
 *   <a href="#prototype--proto">Prototype & __proto__</a>
 *   <a href="#iife-immediately-invoked-function-expression">IIFE (Immediately Invoked Function Expression)</a>
+*   <a href="#匿名函數通常用在哪">匿名函數通常用在哪</a>
 ## 型態(Types)
 **String**  
 **Number**  
