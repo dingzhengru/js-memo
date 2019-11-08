@@ -1,13 +1,10 @@
 # Javascript 筆記
 
-<ul>
-    <li>
-        <a href="#型態(Types)">型態(Types)</a>
-        <a href="#Hoisting">Hoisting</a>
-        <a href="#閉包(Closure)">閉包(Closure)</a>
-        <a href="#深拷貝">深拷貝</a>
-    </li>
-</ul>
+*   <a href="#型態(Types)">型態(Types)</a>
+*   <a href="#Hoisting">Hoisting</a>
+*   <a href="#閉包(Closure)">閉包(Closure)</a>
+*   <a href="#深拷貝">深拷貝</a>
+
 
 ## 型態(Types)
 **String**  
