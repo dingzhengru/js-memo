@@ -128,7 +128,7 @@ console.log('這個會先印出來(Promise也是非同步)')
 **用法:方法前面加個"星號"，並且用 yield 設置停止點**  
 
 執行此函數時，每次執行到 yield 就會停下來，且可以傳送一個值至next()  
-相反，也可以用next(x)來傳值，可以用next()讓函數繼續執行，執行到yield又會再停下來  
+相反，也可以用next(x)來傳值到yield，可以用next()讓函數繼續執行，執行到yield又會再停下來  
 next.value可以取到yield傳送過來的值，next.done可以用來判斷函數是否執行完畢
 ```
 function *get_counter(){
