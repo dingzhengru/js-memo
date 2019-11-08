@@ -13,12 +13,12 @@ Person.prototype.getName = function() {
 let nick = new Person('nick', 18);
 let peter = new Person('peter', 20);
   
-console.log(nick.log === peter.log) // false
-console.log(nick.getName === peter.getName) // true
+console.log('Prototype:', nick.log === peter.log) // false
+console.log('Prototype:', nick.getName === peter.getName) // true
 
-console.log('__proto__', nick.__proto__ === Person.prototype) // true
-console.log('__proto__', Person.prototype.__proto__ === Object.prototype) // true
-console.log('__proto__', Object.prototype.__proto__) // null (已經到頂端了)
+console.log('__proto__:', nick.__proto__ === Person.prototype) // true
+console.log('__proto__:', Person.prototype.__proto__ === Object.prototype) // true
+console.log('__proto__:', Object.prototype.__proto__) // null (已經到頂端了)
 
 console.log('hasOwnProperty:', nick.hasOwnProperty('getName')); // false
 console.log('hasOwnProperty:', nick.__proto__.hasOwnProperty('getName')); // true
