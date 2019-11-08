@@ -329,7 +329,8 @@ x.hello()
 **事件順序: 先捕獲，在冒泡**
 **捕獲事件: 最先觸發的事件，會將事件往目標送**   
 **冒泡事件: 當事件到目標時會觸發，會再將事件往回送**  
-**解決內部事件觸發到外部事件 event.stopPropagation(): 不再讓事件繼續往下傳**  
+** event.stopPropagation(): 不再讓事件繼續往下傳(可以解決冒泡問題)**  
+** event.preventDefault(): 阻止原本事件會做的事情(例如阻止表單傳送、阻止超連結)**  
 
 **點擊list_item_link發生的事件順序**  
 捕獲list => 捕獲list_item => 捕獲list_item_link(target)
