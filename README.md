@@ -10,7 +10,7 @@
 *   <a href="#await--async">Await & Async</a>
 *   <a href="#this">This</a>
 *   <a href="#prototype--proto">Prototype & __proto__</a>
-*   <a href="#iife">IIFE</a>
+*   <a href="#iife-immediately-invoked-function-expression">IIFE (Immediately Invoked Function Expression)</a>
 ## 型態(Types)
 **String**  
 **Number**  
