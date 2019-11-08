@@ -1,10 +1,10 @@
 # Javascript 筆記
 
-*   <a href="#型態Types">型態(Types)</a>
-*   <a href="#Hoisting">Hoisting</a>
+*   <a href="#型態types">型態(Types)</a>
+*   <a href="#hoisting">Hoisting</a>
 *   <a href="#閉包closure">閉包(Closure)</a>
 *   <a href="#深拷貝">深拷貝</a>
-*   <a href="#ES6Class">ES6 Class</a>
+*   <a href="#es6-class">ES6 Class</a>
 
 ## 型態(Types)
 **String**  
@@ -100,4 +100,26 @@ class Dog extends Animal {
 
 let classFoo = new Dog(5);
 classFoo.printInfo(); // this dog age: 1
+```
+## 非同步(平行處理)
+**利用Promise可以把事情排好**
+```
+function promiseTest() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve('jfklsdjflskdjf')
+        }, 100)
+    })
+}
+
+promiseTest()
+.then((data) => {
+    // get resolve()
+    console.log(`這個會等promiseTest處理完才執行 data: ${data}`);
+})
+.catch((error) => {
+    // get reject()
+})
+
+console.log('這個會先印出來(Promise也是非同步)')
 ```
