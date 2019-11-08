@@ -50,5 +50,19 @@ let inner = test()
 inner()
 ```
 ### 會用到閉包的情況
-**透過閉包讓 function 能夠有 private 變數(雖然現在有了let)**  
+**透過閉包讓 function 能夠有 private 變數(不過現在有了let，不需要如此麻煩)**  
 <img src="https://i.imgur.com/ft2rUd6.png" height="200">
+
+## 深拷貝
+**複製一個完全新的物件，而非參考原物件(避免修改到原本的物件)**  
+
+可以用lodash套件中的_.cloneDeep(yourObj)
+```
+let cloneTestA = { name: 'ding' };
+let cloneTestB = cloneTestA;
+cloneTestB.name = 'change';
+console.log(cloneTestA); // change cloneTestA被改了
+cloneTestB = _.cloneDeep(cloneTestA);
+cloneTestB.name = 'change again'; 
+console.log(cloneTestA); // change 沒有被改變
+```
