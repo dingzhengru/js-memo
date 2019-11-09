@@ -14,6 +14,7 @@
 *   <a href="#匿名函數通常用在哪">匿名函數通常用在哪</a>
 *   <a href="#callapplybind">call、apply、bind</a>
 *   <a href="#arrow-function箭頭函式">Arrow-Function(箭頭函式)</a>
+*   <a href="#attribute--property">Attribute & Property</a>
 
 ## 型態(Types)
 **String**  
@@ -383,4 +384,35 @@ $list_item_link.addEventListener('click', (e) => {
 $list_item_link.addEventListener('click', (e) => {
   console.log('list_item_link bubbling', e.eventPhase);
 }, false)
+```
+## Attribute & Property
+**attribute: 是html代碼常看到的key-value**
+**property: 是attribute對應DOM的對象屬性**
+```
+<!-- attribute -->
+<input id="username" type="text" value="foo">
+
+<!-- property -->
+element.id // username
+element.type // text
+element.value // foo
+```
+attribute 會始終保持 html 代碼中的初始值
+property 是會變化、可以修改的(可以說是現在實際的值)
+```
+<input type="zzz">
+
+let inputEl = document.getElementById('username');
+
+console.log(inputEl.getAttribute('type')) // zzz
+
+console.log(inputEl.type) // text 實際上是type是text
+```
+attribute 可以自定義
+property 則不行
+```
+<input customTag="123">
+
+console.log(inputEl.getAttribute('customTag')) // 123
+console.log(inputEl.customTag) // undefined
 ```
