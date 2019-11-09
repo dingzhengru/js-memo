@@ -22,8 +22,8 @@
 **Array**  
 **Object**: { key:value }  
 **undefined**: 未賦值的變數的預設值為undefined  
-```typeof undefined // undefined```
-**null**: 意思是「沒有值」的值  
+```typeof undefined // undefined```  
+**null**: 「沒有值」的值  
 ```typeof null // object```
 ```
 null == undefined // true
