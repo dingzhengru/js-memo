@@ -414,3 +414,11 @@ console.log(inputEl.type) // text (代表實際上type是text)
 console.log(inputEl.getAttribute('customTag')) // 123
 console.log(inputEl.customTag) // undefined
 ```
+## Ternary Operator(一行式if-else)
+**判斷式 ? true-value : false-value**  
+```
+const isGood = true ? 'good' : 'not good' // good
+
+// with arrow funcion(es6)
+const grade = (score) => score < 60 ? 'fail' : 'pass';
+```
