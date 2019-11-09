@@ -405,11 +405,9 @@ element.value // foo
 let inputEl = document.getElementById('username');
 
 console.log(inputEl.getAttribute('type')) // zzz
-
-console.log(inputEl.type) // text 實際上是type是text
+console.log(inputEl.type) // text (代表實際上type是text)
 ```
-**attribute 可以自定義**  
-**property 則不行**  
+**attribute 可以自定義，property 則不行**  
 ```
 <input customTag="123">
 
