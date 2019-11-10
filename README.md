@@ -770,3 +770,4 @@ const greet = function() {
 ```
 <img src="https://i.imgur.com/ssO2tmG.png" height="200">  
 <img src="https://i.imgur.com/Eh6xHBM.png" height="200">  
+參考:https://pjchender.blogspot.com/2016/03/javascriptfunction-statements-and.html
