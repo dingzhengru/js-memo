@@ -768,5 +768,5 @@ const greet = function() {
   console.log('Hi');
 };
 ```
-<img src="https://i.imgur.com/ssO2tmG.png">  
-<img src="https://i.imgur.com/Eh6xHBM.png">  
+<img src="https://i.imgur.com/ssO2tmG.png" height="200">  
+<img src="https://i.imgur.com/Eh6xHBM.png" height="200">  
