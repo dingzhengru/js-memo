@@ -17,6 +17,7 @@
 *   <a href="#attribute--property">Attribute & Property</a>
 *   <a href="#嚴格模式use-strict">嚴格模式('use strict')</a>
 *   <a href="#為何使用需在編譯轉成js的語言ex-typescript">為何使用需在編譯轉成js的語言(ex: TypeScript)</a>
+*   <a href="#Debugging-JavaScriptEslint">Debugging JavaScript(Eslint)</a>
 
 
 ## 型態(Types)
@@ -450,3 +451,16 @@ function a () {
 ## 為何使用需在編譯轉成js的語言(ex: TypeScript)
 1. Type: 此類型語言會出現的主因，因為js變數宣告並不會綁定其形態，雖然可以靈活運用，但不嚴謹  
 2. Class: 為了讓程式碼結構可讀性更高而使用，不過在ES6就有了class寫法了  
+
+## Debugging JavaScript(Eslint)
+JS寫法太過自由，獨自開發是還好，但當多人開發時，就需要統一寫法  
+### Eslint 就可以解決這個問題，同時也有debug的功能
+
+```
+{
+    // 可以選擇error, warn, off三種方式提醒你
+    "rules": {
+        "quotes": ["error", "double"] // 規定用雙引號，單引號會出錯誤
+    }
+}
+```
