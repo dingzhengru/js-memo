@@ -22,6 +22,8 @@
 *   <a href="#高階函數">高階函數</a>
 *   <a href="#解構賦值destructuring">解構賦值(Destructuring)</a>
 *   <a href="#es6-樣板字面值template-literals">ES6 樣板字面值(Template-Literals)</a>
+*   <a href="#Curry柯里化">Curry(柯里化)</a>
+
 
 ## 型態(Types)
 **String**  
@@ -563,4 +565,24 @@ let component_es6 = `
         <img src="img1.jpg>
     </div>
 </header>`
+```
+
+## Curry(柯里化)
+
+**Curry 的概念很簡單: 你可以只透過部分的參數呼叫一個 function，它會回傳一個 function 去處理剩下的參數**  
+
+```
+let add = function(x) {
+  return function(y) {
+    return x + y;
+  };
+};
+
+let a = add(1);
+let b = add(10);
+
+a(2); // 3 (1+2)
+a(3); // 4 (1+3)
+b(2); // 12(10+2)
+b(5); // 15(10+5)
 ```
