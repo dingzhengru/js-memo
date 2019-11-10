@@ -624,4 +624,17 @@ function restSum(...numbers) {
 restSum(1) // [1] => 1
 restSum(1, 2, 3, 4, 5) // [1,2,3,4,5] => 15
 ```
+## export & import
+**export 分兩種**  
+1. 公開多個指定的變數 export{ 變數, 變數2 }, 就算只有一個也要括起來，import一定要對應到變數才能引入  
+2. 公開一個預設的 export default 變數，import時可以自己指定變數名稱
+```
+export {a, b, c}
 
+import {a, b} from 'xxx.js'
+```
+```
+export default a
+
+import foo from 'xxx.js'
+```
