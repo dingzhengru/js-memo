@@ -25,7 +25,7 @@
 *   <a href="#Curry柯里化">Curry(柯里化)</a>
 *   <a href="#spread-syntax--rest-syntax展開其餘語法">Spread syntax & Rest syntax(展開、其餘語法)</a>
 *   <a href="#export--import">export & import</a>
-
+*   <a href="#靜態成員static-class-members">靜態成員(static class members)</a>
 
 ## 型態(Types)
 **String**  
@@ -645,6 +645,7 @@ import foo from 'xxx.js'
 ```
 ## 靜態成員(static class members)
 **其實就只是class的共用區域，避免每個實體都多占用一個空間**  
+**這在上面的prototype有說過，不過這邊範例是用class來做**  
 靜態方法: 可以不實體化就呼叫，**但無法被已實體化的類別物件呼叫**，前面+個static宣告即可  
 靜態變數: 跟方法一樣，只是型態是一個變數
 ```
