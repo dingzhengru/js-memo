@@ -437,7 +437,9 @@ const grade = (score) => score < 60 ? 'fail' : 'pass';
 4. 數值使用 8 進位語法  
 5. 禁止使用 with 語法  
 6. arguments、eval 不能作為變數名稱(也包含新的保留字implements, interface, let, package, private, protected, public, static, yield)  
-```'use strict' //放上最上面 整個檔案都套用```  
+```
+'use strict' //放上最上面 整個檔案都套用
+```  
 ```
 function a () {
   'use strict' // 這樣只套用在這個scope裡面
