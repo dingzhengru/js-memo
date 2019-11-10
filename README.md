@@ -23,8 +23,8 @@
 *   <a href="#解構賦值destructuring">解構賦值(Destructuring)</a>
 *   <a href="#es6-樣板字面值template-literals">ES6 樣板字面值(Template-Literals)</a>
 *   <a href="#Curry柯里化">Curry(柯里化)</a>
-*   <a href="#Curry柯里化">Spread syntax & Rest syntax(展開、其餘語法)</a>
-
+*   <a href="#spread-syntax--rest-syntax展開其餘語法">Spread syntax & Rest syntax(展開、其餘語法)</a>
+*   <a href="#export--import">export & import</a>
 
 
 ## 型態(Types)
@@ -628,6 +628,10 @@ restSum(1, 2, 3, 4, 5) // [1,2,3,4,5] => 15
 **export 分兩種**  
 1. 公開多個指定的變數 export{ 變數, 變數2 }, 就算只有一個也要括起來，import一定要對應到變數才能引入  
 2. 公開一個預設的 export default 變數，import時可以自己指定變數名稱
+**注意: 使用在html上的話，需幫sciprt標籤加上type="module"**  
+```
+<script type="module" src="module.js"></script>
+```
 ```
 export {a, b, c}
 
