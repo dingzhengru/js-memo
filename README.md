@@ -3,7 +3,7 @@
 *   <a href="#型態types">型態(Types)</a>
 *   <a href="#hoisting">Hoisting</a>
 *   <a href="#閉包closure">閉包(Closure)</a>
-*   <a href="#深拷貝">深拷貝</a>
+*   <a href="#深拷貝--淺拷貝">深拷貝 & 淺拷貝</a>
 *   <a href="#es6-class">ES6 Class</a>
 *   <a href="#非同步平行處理--es6-promise">非同步(平行處理) & Promise</a>
 *   <a href="#es6-generator">ES6 Generator</a>
@@ -80,18 +80,19 @@ inner()
 **透過閉包讓 function 能夠有 private 變數(不過現在有了let，不需要如此麻煩)**  
 <img src="https://i.imgur.com/ft2rUd6.png" height="200">
 
-## 深拷貝
-**複製一個完全新的物件，而非參考原物件(避免修改到原本的物件)**  
+## 深拷貝 & 淺拷貝
+**淺拷貝後的物件，修改會動到原物件**
+**深拷貝複製一個完全新的物件，而非參考原物件(避免修改到原本的物件)**  
 
 可以用lodash套件中的_.cloneDeep(yourObj)
 ```
 let cloneTestA = { name: 'ding' };
-let cloneTestB = cloneTestA;
+let cloneTestB = cloneTestA; // 淺拷貝
 cloneTestB.name = 'change';
 
 console.log(cloneTestA); // change cloneTestA被改了
 
-cloneTestB = _.cloneDeep(cloneTestA);
+cloneTestB = _.cloneDeep(cloneTestA); // 深拷貝
 cloneTestB.name = 'change again'; 
 
 console.log(cloneTestA); // change 沒有被改變
