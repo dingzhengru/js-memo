@@ -23,6 +23,8 @@
 *   <a href="#解構賦值destructuring">解構賦值(Destructuring)</a>
 *   <a href="#es6-樣板字面值template-literals">ES6 樣板字面值(Template-Literals)</a>
 *   <a href="#Curry柯里化">Curry(柯里化)</a>
+*   <a href="#Curry柯里化">Spread syntax & Rest syntax(展開、其餘語法)</a>
+
 
 
 ## 型態(Types)
@@ -586,3 +588,40 @@ a(3); // 4 (1+3)
 b(2); // 12(10+2)
 b(5); // 15(10+5)
 ```
+## Spread syntax & Rest syntax(展開、其餘語法)
+**兩者的差異與共同點**  
+1. 符號都是三個點(...)  
+2. 都與陣列有關  
+3. 一個是展開陣列中的值，一個是集合其餘的值成為陣列  
+**展開語法: 把一個陣列展開成個別值，最常見的是用來"連接陣列"，對應的陣列方法是Array.concat()**  
+```
+// 展開語法(Spread)
+let list = [ "hello", true, 5 ]
+let list2 = [ 1, 2, ...list ] // [ 1, 2, "hello", true, 5 ]
+
+// 字串展開
+let aString = "foo"
+let chars = [ ...aString ] // [ "f", "o", "o" ]
+
+// 傳入多個參數時
+function spreadSum(a, b, c) {
+  return a + b + c
+}
+const args = [1, 2, 3]
+spreadSum(...args); //6
+```
+**其餘語法: 會用在兩個地方，一個是比較常見的"當作接收參數使用"時，另一種情況是用在解構賦值時(上面有)**  
+```
+// 其餘語法(Rest)
+function restSum(...numbers) {
+  let sum = 0;
+  for(let [key,value] of Object.entries(numbers)){
+    sum = sum + value
+  }
+  return sum;
+}
+
+restSum(1) // [1] => 1
+restSum(1, 2, 3, 4, 5) // [1,2,3,4,5] => 15
+```
+
