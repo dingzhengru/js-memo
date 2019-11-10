@@ -21,7 +21,7 @@
 *   <a href="#事件循環event-loop">事件循環(event loop)</a>
 *   <a href="#高階函數">高階函數</a>
 *   <a href="#解構賦值destructuring">解構賦值(Destructuring)</a>
-
+*   <a href="#es6-樣板字面值template-literals">ES6 樣板字面值(Template-Literals)</a>
 
 ## 型態(Types)
 **String**  
