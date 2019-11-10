@@ -109,6 +109,7 @@ class Animal {
   printInfo() {
     console.log(`age: ${this.age}`)
   }
+  static abc() {// 靜態方法}
 }
 class Dog extends Animal {
   constructor() {
@@ -236,7 +237,7 @@ console.log(this) // window物件
 ```
 
 ## Prototype & __proto__
-### prototype 有點類似其他語言Class的靜態變數與靜態方法(static)
+### prototype 其實就是Class的靜態變數與靜態方法(static)
 下面範例兩個實例中的log方法是不同的，就代表佔用了兩塊空間  
 放在prototype的getName就會是一樣的，代表這變數或方法是共享的  
 ### ```__proto__```會去指向此實體所屬物件的prototype
@@ -641,4 +642,24 @@ import {a, b} from 'xxx.js'
 export default a
 
 import foo from 'xxx.js'
+```
+## 靜態成員(static class members)
+**其實就只是class的共用區域，避免每個實體都多占用一個空間**  
+靜態方法: 可以不實體化就呼叫，**但無法被已實體化的類別物件呼叫**，前面+個static宣告即可  
+靜態變數: 
+```
+class Animal {
+  static count = 0; // 靜態變數
+  constructor() {
+    Animal.addCount(); // 調用靜態方法
+  }
+  static addCount() { // 靜態方法
+    Animal.count++
+  }
+}
+Animal.count // 0
+
+let classFoo = new Animal(); // 會觸發Animal.addCount()
+
+Animal.count // 1
 ```
