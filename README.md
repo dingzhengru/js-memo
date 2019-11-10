@@ -471,6 +471,6 @@ JS寫法太過自由，獨自開發是還好，但當多人開發時，就需要
 3. 主線程內的任務執行完畢為空，會去Event Queue讀取對應的函數，進入主線程執行  
 
 **上述過程會不斷重複，也就是常說的Event Loop(事件循環)**  
-<img src="https://i.imgur.com/TORBpmM.jpg" height="200">  
-<img src="https://i.imgur.com/bVYf6vF.jpg" height="200">
+<img src="https://i.imgur.com/TORBpmM.jpg" height="300">  
+<img src="https://i.imgur.com/bVYf6vF.jpg" height="300">  
 參考: https://medium.com/@amosricky95/ricky%E7%AD%86%E8%A8%98-javascript-%E7%9A%84-event-loop-c17a0a49d6e4  
