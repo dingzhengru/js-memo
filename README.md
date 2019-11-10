@@ -16,6 +16,8 @@
 *   <a href="#arrow-function箭頭函式">Arrow-Function(箭頭函式)</a>
 *   <a href="#attribute--property">Attribute & Property</a>
 *   <a href="#嚴格模式use-strict">嚴格模式('use strict')</a>
+*   <a href="#為何使用需在編譯轉成js的語言ex:-TypeScript">為何使用需在編譯轉成js的語言(ex: TypeScript)</a>
+
 
 ## 型態(Types)
 **String**  
@@ -445,3 +447,6 @@ function a () {
   'use strict' // 這樣只套用在這個scope裡面
 }
 ```
+## 為何使用需在編譯轉成js的語言(ex: TypeScript)
+1. Type: 此類型語言會出現的主因，因為js變數宣告並不會綁定其形態，雖然可以靈活運用，但不嚴謹  
+2. Class: 為了讓程式碼結構可讀性更高而使用，不過在ES6就有了class寫法了  
