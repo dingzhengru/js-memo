@@ -15,6 +15,7 @@
 *   <a href="#callapplybind">call、apply、bind</a>
 *   <a href="#arrow-function箭頭函式">Arrow-Function(箭頭函式)</a>
 *   <a href="#attribute--property">Attribute & Property</a>
+*   <a href="#嚴格模式'use strict'">嚴格模式('use strict')</a>
 
 ## 型態(Types)
 **String**  
@@ -421,4 +422,24 @@ const isGood = true ? 'good' : 'not good' // good
 
 // with arrow funcion(es6)
 const grade = (score) => score < 60 ? 'fail' : 'pass';
+```
+
+## 嚴格模式('use strict')
+**'use strict' 直接加入在程式碼的前方就可以開始運作**  
+1. 消除Javascript語法的一些不合理、不嚴謹之處，減少一些怪異行為  
+2. 消除程式碼執行的一些不安全之處，保證程式碼執行的安全  
+3. 提高編譯器效率，增加執行速度  
+4. 為未來新版本的Javascript做好鋪墊  
+**常見錯誤**  
+1. 不宣告直接賦予變數  
+2. 刪除已經宣告的錯誤  
+3. 物件內有重複屬性  
+4. 數值使用 8 進位語法  
+5. 禁止使用 with 語法  
+6. arguments、eval 不能作為變數名稱(也包含新的保留字implements, interface, let, package, private, protected, public, static, yield)  
+```'use strict' //放上最上面 整個檔案都套用```  
+```
+function a () {
+  'use strict' // 這樣只套用在這個scope裡面
+}
 ```
