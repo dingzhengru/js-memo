@@ -755,7 +755,7 @@ sessionStorage.clear();
 ```
 
 ## Function Statements & Function Expressions
-* Function Statements: 宣告一個函數，並給予這個函數一個name
+* Function Statements: 宣告一個函數，並給予這個函數一個name (又稱function declaration)
 * Function Expressions: 創建一個匿名函數，並把他指定給一個變數
 ```
 // function statements = function declaration
