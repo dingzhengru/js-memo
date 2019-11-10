@@ -479,7 +479,7 @@ JS寫法太過自由，獨自開發是還好，但當多人開發時，就需要
 參考: https://medium.com/@amosricky95/ricky%E7%AD%86%E8%A8%98-javascript-%E7%9A%84-event-loop-c17a0a49d6e4  
 
 ## 高階函數
-單純是指以下這兩種函數
+單純是指以下這兩種函數  
 **1. 回傳結果是一個函數**  
 **2. 參數是接收一個或多個函數(callback)**  
 ```
