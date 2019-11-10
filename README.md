@@ -14,6 +14,8 @@
 *   <a href="#匿名函數通常用在哪">匿名函數通常用在哪</a>
 *   <a href="#callapplybind">call、apply、bind</a>
 *   <a href="#arrow-function箭頭函式">Arrow-Function(箭頭函式)</a>
+*   <a href="#event-捕獲冒泡capturing-bubbling">Event:捕獲,冒泡(Capturing,Bubbling)</a>
+*   <a href="#event-Delegation事件委派">Event Delegation(事件委派)</a>
 *   <a href="#attribute--property">Attribute & Property</a>
 *   <a href="#嚴格模式use-strict">嚴格模式('use strict')</a>
 *   <a href="#為何使用需在編譯轉成js的語言ex-typescript">為何使用需在編譯轉成js的語言(ex: TypeScript)</a>
@@ -26,7 +28,7 @@
 *   <a href="#spread-syntax--rest-syntax展開其餘語法">Spread syntax & Rest syntax(展開、其餘語法)</a>
 *   <a href="#export--import">export & import</a>
 *   <a href="#靜態成員static-class-members">靜態成員(static class members)</a>
-
+*   <a href="#靜態成員static-class-members">Duplicate</a>
 ## 型態(Types)
 **String**  
 **Number**  
@@ -96,6 +98,9 @@ cloneTestB = _.cloneDeep(cloneTestA); // 深拷貝
 cloneTestB.name = 'change again'; 
 
 console.log(cloneTestA); // change 沒有被改變
+
+// 不倚靠lodash的深拷貝
+JSON.parse(JSON.stringify(cloneTestA))
 ```
 
 ## ES6 Class
@@ -398,6 +403,28 @@ $list_item_link.addEventListener('click', (e) => {
   console.log('list_item_link bubbling', e.eventPhase);
 }, false)
 ```
+## Event Delegation(事件委派)
+### 為什麼會有事件委派的模式呢 
+*  為了減少監聽器，缺點是要多寫判斷程式碼 
+*  過多重複的監聽器 — 10x10的W按鈕 掛載一百個重複的click事件  
+*  掛載、移除事件是有成本的 — removeEventListener
+### 為什麼可以將事件委派?  
+*  事件的冒泡機制 — 把子節點們的事件統一處理  
+*  事件的target屬性 — 辨別事件的位置  
+```
+<div id="parent">
+    <div class="child" data-name="a"></div>
+    <div class="child" data-name="b"></div>
+    <div class="child" data-name="c"></div>
+</div>
+
+let $parent = document.querySelector('#parent')
+
+$parent.addEventListener('click', (e) => {
+    console.log(e.target.getAttribute('data-name'));
+})
+```
+
 ## Attribute & Property
 **attribute: 是html代碼常看到的key-value**  
 **property: 是attribute對應DOM的對象屬性**  
@@ -722,5 +749,5 @@ sessionStorage.removeItem('key');
 // 清空
 localStorage.clear();
 sessionStorage.clear();
-
 ```
+
