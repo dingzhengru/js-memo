@@ -646,7 +646,7 @@ import foo from 'xxx.js'
 ## 靜態成員(static class members)
 **其實就只是class的共用區域，避免每個實體都多占用一個空間**  
 靜態方法: 可以不實體化就呼叫，**但無法被已實體化的類別物件呼叫**，前面+個static宣告即可  
-靜態變數: 
+靜態變數: 跟方法一樣，只是型態是一個變數
 ```
 class Animal {
   static count = 0; // 靜態變數
