@@ -29,6 +29,9 @@
 *   <a href="#export--import">export & import</a>
 *   <a href="#靜態成員static-class-members">靜態成員(static class members)</a>
 *   <a href="#靜態成員static-class-members">Duplicate</a>
+*   <a href="#function expressions--function-statements">Function Expressions & Function Statements</a>
+
+
 ## 型態(Types)
 **String**  
 **Number**  
@@ -751,3 +754,19 @@ localStorage.clear();
 sessionStorage.clear();
 ```
 
+## Function Statements & Function Expressions
+* Function Statements: 宣告一個函數，並給予這個函數一個name
+* Function Expressions: 創建一個匿名函數，並把他指定給一個變數
+```
+// function statements = function declaration
+function greet() {
+  console.log('Hi');
+}
+
+// function expressions
+const greet = function() {
+  console.log('Hi');
+};
+```
+<img src="https://i.imgur.com/ssO2tmG.png">  
+<img src="https://i.imgur.com/Eh6xHBM.png">  
