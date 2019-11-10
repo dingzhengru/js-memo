@@ -562,5 +562,5 @@ let component_es6 = `
     <div class='banner'>
         <img src="img1.jpg>
     </div>
-</header>
+</header>`
 ```
