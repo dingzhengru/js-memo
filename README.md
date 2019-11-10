@@ -491,3 +491,55 @@ function ex2 () {
   return function() {}
 }
 ```
+## 解構賦值(Destructuring)
+
+**是一個在ES6的新特性，用於提取陣列或物件中的資料，新語法可以讓程式碼在撰寫時更為簡短與提高閱讀性**  
+解構賦值的語法並不難，基本上是一種陣列與物件指定值運算語法的簡短改進  
+
+陣列解構賦值(Array destructuring)  
+```
+// 基本用法
+const [a, b] = [1, 2] //a=1, b=2
+
+// 略過某些值
+const [a, , b] = [1, 2, 3] // a=1, b=3
+
+// 其餘運算
+const [a, ...b] = [1, 2, 3] //a=1, b=[2,3]
+
+// 失敗保護(Fail-safe)
+const [, , , a, b] = [1, 2, 3] // a=undefined, b=undefined
+
+// 交換值
+let a = 1, b = 2;
+[b, a] = [a, b] //a=2, b=1
+
+// 多維複雜陣列
+const [a, [b, [c, d]]] = [1, [2, [[[3, 4], 5], 6]]]
+
+// 字串
+const str = "hello";
+const [a, b, c, d, e] = str
+```
+物件解構賦值(Object destructuring)  
+```
+// 基本用法
+const { user: x } = { user: 5 } // x=5
+
+// 失敗保護(Fail-safe)
+const { user: x } = { user2: 5 } //x=undefined
+
+// 賦予新的變數名稱
+const { prop: x, prop2: y } = { prop: 5, prop2: 10 } // x=5, y=10
+
+// 簡短語法(Short-hand syntax)
+const { prop, prop2 } = { prop: 5, prop2: 10 } //prop = 5, prop2=10
+
+// ES7的物件屬性其餘運算符
+const {a, b, ...rest} = {a:1, b:2, c:3, d:4} //a=1, b=2, rest={c:3, d:4}
+```
+```
+// 常見錯誤的示範
+let a, b
+{ a, b } = {a: 1, b: 2}
+```
