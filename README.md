@@ -664,3 +664,19 @@ let classFoo = new Animal(); // 會觸發Animal.addCount()
 
 Animal.count // 1
 ```
+## Cookie & LocalStorage & SessionStorage
+
+**Cookie**  
+*  為server傳送給client(瀏覽器)的一個小片段資料
+*  通常被用來保持使用者的登入狀態
+*  可設定失效時間。 預設是關閉瀏覽器後失效
+*  大小約 4kb
+*  每次 request 時都會帶上
+**LocalStorage & SessionStorage**  
+共同點:  
+*  都是使用 key / value 的方式 給值或取值
+*  大小預設有 5mb
+*  每次 request 不會帶上
+不同點:  
+*  LocalStorage: 不會過期，除非手動清除
+*  SessionStorage: 每次分頁或瀏覽器關掉後就會清除
