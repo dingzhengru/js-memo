@@ -16,7 +16,7 @@
 *   <a href="#arrow-function箭頭函式">Arrow-Function(箭頭函式)</a>
 *   <a href="#attribute--property">Attribute & Property</a>
 *   <a href="#嚴格模式use-strict">嚴格模式('use strict')</a>
-*   <a href="#為何使用需在編譯轉成js的語言ex:-TypeScript">為何使用需在編譯轉成js的語言(ex: TypeScript)</a>
+*   <a href="#為何使用需在編譯轉成js的語言ex-typescript">為何使用需在編譯轉成js的語言(ex: TypeScript)</a>
 
 
 ## 型態(Types)
