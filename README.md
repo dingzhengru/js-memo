@@ -496,7 +496,7 @@ function ex2 () {
 **是一個在ES6的新特性，用於提取陣列或物件中的資料，新語法可以讓程式碼在撰寫時更為簡短與提高閱讀性**  
 解構賦值的語法並不難，基本上是一種陣列與物件指定值運算語法的簡短改進  
 
-陣列解構賦值(Array destructuring)  
+**陣列解構賦值(Array destructuring)**  
 ```
 // 基本用法
 const [a, b] = [1, 2] //a=1, b=2
@@ -521,7 +521,7 @@ const [a, [b, [c, d]]] = [1, [2, [[[3, 4], 5], 6]]]
 const str = "hello";
 const [a, b, c, d, e] = str
 ```
-物件解構賦值(Object destructuring)  
+**物件解構賦值(Object destructuring)**  
 ```
 // 基本用法
 const { user: x } = { user: 5 } // x=5
