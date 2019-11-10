@@ -681,3 +681,5 @@ Animal.count // 1
 **不同點:**  
 *  LocalStorage: 不會過期，除非手動清除  
 *  SessionStorage: 每次分頁或瀏覽器關掉後就會清除  
+
+<img src="https://i.imgur.com/wjRUpnP.png" height="200">
