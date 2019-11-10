@@ -543,3 +543,24 @@ const {a, b, ...rest} = {a:1, b:2, c:3, d:4} //a=1, b=2, rest={c:3, d:4}
 let a, b
 { a, b } = {a: 1, b: 2}
 ```
+## ES6 樣板字面值(template Literals)
+**除了提高可讀性，還包含下列功能**  
+1. 放入 HTML 的內容  
+2. 很長的字串包含換行  
+3. 字串連結變數 (${變數名稱})  
+```
+// es5
+let component_es5 = '<header>\n'+
+'<div class="banner">\n'+
+'<img src="img1.jpg"\n'+
+'</div>\n'+
+'</header>'
+
+// es6
+let component_es6 = `
+<header>
+    <div class='banner'>
+        <img src="img1.jpg>
+    </div>
+</header>
+```
