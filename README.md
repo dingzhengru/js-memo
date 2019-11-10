@@ -15,7 +15,7 @@
 *   <a href="#callapplybind">call、apply、bind</a>
 *   <a href="#arrow-function箭頭函式">Arrow-Function(箭頭函式)</a>
 *   <a href="#attribute--property">Attribute & Property</a>
-*   <a href="#嚴格模式'use strict'">嚴格模式('use strict')</a>
+*   <a href="#嚴格模式use-strict">嚴格模式('use strict')</a>
 
 ## 型態(Types)
 **String**  
