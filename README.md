@@ -18,6 +18,9 @@
 *   <a href="#嚴格模式use-strict">嚴格模式('use strict')</a>
 *   <a href="#為何使用需在編譯轉成js的語言ex-typescript">為何使用需在編譯轉成js的語言(ex: TypeScript)</a>
 *   <a href="#Debugging-JavaScriptEslint">Debugging JavaScript(Eslint)</a>
+*   <a href="#事件循環event-loop">事件循環(event loop)</a>
+*   <a href="#高階函數">高階函數</a>
+
 
 
 ## 型態(Types)
@@ -474,3 +477,17 @@ JS寫法太過自由，獨自開發是還好，但當多人開發時，就需要
 <img src="https://i.imgur.com/TORBpmM.jpg" height="300">
 <img src="https://i.imgur.com/bVYf6vF.jpg" height="300">  
 參考: https://medium.com/@amosricky95/ricky%E7%AD%86%E8%A8%98-javascript-%E7%9A%84-event-loop-c17a0a49d6e4  
+
+## 高階函數
+單純是指以下這兩種函數
+**1. 回傳結果是一個函數**  
+**2. 參數是接收一個或多個函數(callback)**  
+```
+function ex1 (callback) {
+  callback();
+}
+
+function ex2 () {
+  return function() {}
+}
+```
