@@ -773,7 +773,7 @@ const greet = function() {
 參考:https://pjchender.blogspot.com/2016/03/javascriptfunction-statements-and.html
 
 ## new做了哪些事
-**當 new Person() 的時候，做了這些事情:**  
+**當 new Person('Jhon') 的時候，做了這些事情:**  
 1. 創建一個空的object ```let p2 = {}```
 2. 新物件繼承Person.prototype ```p2.__proto__ = Person.prototype```
 3. 執行剛剛繼承的建構式，並把參數帶入```p2.__proto__.constructor('Jhon')```
