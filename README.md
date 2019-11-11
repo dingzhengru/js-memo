@@ -776,7 +776,7 @@ const greet = function() {
 **當 new Person() 的時候，做了這些事情:**  
 1. 創建一個空的object ```let p2 = {}```
 2. 新物件繼承Person.prototype ```p2.__proto__ = Person.prototype```
-3. 執行Person()，並把this指定為新物件```Person.call(p2)```(建構式)
+3. 執行Person()，並把this指定為新物件```Person.call(p2)```(執行建構式)
 4. 回傳這個新物件
 
 ```
