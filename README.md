@@ -774,9 +774,9 @@ const greet = function() {
 
 ## new做了哪些事
 **當 new Person() 的時候，做了這些事情:**  
-1. 創建一個空的object (let p2 = {})
-2. 新物件繼承Person.prototype (p2.__proto__ = Person.prototype)
-3. 用新物件的this去執行Person() (Person.call(p2))
+1. 創建一個空的object ```let p2 = {}```
+2. 新物件繼承Person.prototype ```p2.__proto__ = Person.prototype```
+3. 用新物件的去執行Person()這個建構式 ```Person.call(p2)```(把自己的this丟進去)
 4. 回傳這個新物件
 
 ```
@@ -789,9 +789,9 @@ function Person() {
 let p = new Person(); 
 
 // new 實際上做了這些事 
-let p2 = {};
-p2.__proto__ = Person.prototype;
-Person.call(p2);
+let p2 = {}; // 新增一個空物件
+p2.__proto__ = Person.prototype; // 繼承Person的prototype
+Person.call(p2); // 將自己帶入執行Person() (建構式)
 
 console.log(Person === Person.prototype.constructor ); // true
 console.log(p2 instanceof Person); // true
