@@ -771,3 +771,29 @@ const greet = function() {
 <img src="https://i.imgur.com/ssO2tmG.png" height="200">  
 <img src="https://i.imgur.com/Eh6xHBM.png" height="200">  
 參考:https://pjchender.blogspot.com/2016/03/javascriptfunction-statements-and.html
+
+## new做了哪些事
+**當 new Person() 的時候，做了這些事情:**  
+1. 創建一個空的object (let p2 = {})
+2. 新物件繼承Person.prototype (p2.__proto__ = Person.prototype)
+3. 用新物件的this去執行Person() (Person.call(p2))
+4. 回傳這個新物件
+
+```
+function Person() {
+  this.name = 'Jhon'
+
+  console.log('執行Person()');
+}
+
+let p = new Person(); 
+
+// new 實際上做了這些事 
+let p2 = {};
+p2.__proto__ = Person.prototype;
+Person.call(p2);
+
+console.log(Person === Person.prototype.constructor ); // true
+console.log(p2 instanceof Person); // true
+console.log(p2.constructor === Person ); // true
+```
