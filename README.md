@@ -790,7 +790,7 @@ let p = new Person();
 
 let p2 = {};
 p2.__proto__ = Person.prototype;
-p2.__proto__.constructor('Jhon')
+p2.__proto__.constructor('Jhon') // 或是執行 Person.call(p2, 'Jhon') 一樣意思
 
 console.log(Person === Person.prototype.constructor); // true
 console.log(p2 instanceof Person); // true

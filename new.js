@@ -8,8 +8,7 @@ let p = new Person();
 
 let p2 = {};
 p2.__proto__ = Person.prototype;
-p2.__proto__.constructor('Jhon')
-console.log(p2.__proto__.constructor);
+p2.__proto__.constructor('Jhon') // Person.call(p2, 'Jhon')
 
 
 console.log('p1, p2', p, p2)
