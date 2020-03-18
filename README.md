@@ -89,6 +89,8 @@ inner()
 **淺拷貝後的物件，修改會動到原物件**
 **深拷貝複製一個完全新的物件，而非參考原物件(避免修改到原本的物件)**  
 
+* 使用展開運算子即可快速深拷貝: { ...data } & [ ...data ]
+
 可以用lodash套件中的_.cloneDeep(yourObj)
 ```
 let cloneTestA = { name: 'ding' };
@@ -103,7 +105,13 @@ cloneTestB.name = 'change again';
 console.log(cloneTestA); // change 沒有被改變
 
 // 不倚靠lodash的深拷貝
+
+// 利用展開運算符
+
+
+// 利用 JSON 轉字串 再轉回來
 JSON.parse(JSON.stringify(cloneTestA))
+
 ```
 
 ## ES6 Class
