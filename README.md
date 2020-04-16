@@ -1,5 +1,11 @@
 # Javascript 筆記
 
+## 執行
+```bash
+npm install
+npm start
+```
+
 *   <a href="#型態types">型態(Types)</a>
 *   <a href="#hoisting">Hoisting</a>
 *   <a href="#閉包closure">閉包(Closure)</a>

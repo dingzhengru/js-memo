@@ -1,0 +1,25 @@
+{
+  "name": "js-memo",
+  "version": "1.0.0",
+  "description": "js 筆記",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node -r esm ./server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dingzhengru/js-memo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dingzhengru/js-memo/issues"
+  },
+  "homepage": "https://github.com/dingzhengru/js-memo#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "esm": "^3.2.25",
+    "express": "^4.17.1"
+  }
+}
