@@ -31,6 +31,7 @@
 *   <a href="#靜態成員static-class-members">Duplicate</a>
 *   <a href="#function expressions--function-statements">Function Expressions & Function Statements</a>
 *   <a href="#javaScript-中的參數傳遞">JavaScript 中的參數傳遞</a>
+*   <a href="#動態引入模組">動態引入模組</a>
 
 ## 型態(Types)
 **String**  
@@ -799,3 +800,12 @@ console.log(p2.constructor === Person); // true
 ## JavaScript 中的參數傳遞
 *  參考: https://blog.techbridge.cc/2018/06/23/javascript-call-by-value-or-reference/
 *  重點:  JavaScript 傳 object 進去的時候，可以更改原本物件的值，但重新賦值並不會影響到外部的 object
+
+## 動態引入模組
+*  參考: https://v8.dev/features/modules#dynamic-import
+*  以往都只能先引入完全部模組，才能執行主程式
+*  此功能包含可以用變數載入、懶載入(需要時才載)
+
+```js
+const {repeat, shout} = await import(moduleSpecifier)
+```
