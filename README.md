@@ -811,7 +811,27 @@ console.log(p2.constructor === Person); // true
 *  參考: https://v8.dev/features/modules#dynamic-import
 *  以往都只能先引入完全部模組，才能執行主程式
 *  此功能包含可以用變數載入、懶載入(需要時才載)
+*  雖然參考文件是引入 .mjs 但經測試後，.js 也可以
 
 ```js
-const {repeat, shout} = await import(moduleSpecifier)
+<script type="module">
+  (async () => {
+    const moduleSpecifier = './DynamicImport.js';
+
+    const {catShout, dogShout} = await import(moduleSpecifier);
+
+    catShout()
+    dogShout()
+  })();
+</script>
+```
+**DynamicImport.js**
+```js
+export function catShout() {
+  console.log('meow!')
+}
+
+export function dogShout() {
+  console.log('woof!')
+}
 ```
