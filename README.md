@@ -14,7 +14,6 @@
     - [其實跟 Promise.all[]有點像(但 all 裡面還是平行處理)](#其實跟-promiseall有點像但-all-裡面還是平行處理)
     - [不過 await 實現了同步(會等前一個結束才執行下一個)](#不過-await-實現了同步會等前一個結束才執行下一個)
   - [This](#this)
-    - [指向"當前作用域的實體"](#指向當前作用域的實體)
   - [Prototype & **proto**](#prototype--proto)
     - [prototype 其實就是 Class 的靜態變數與靜態方法(static)](#prototype-其實就是-class-的靜態變數與靜態方法static)
     - [`__proto__`會去指向此實體所屬物件的 prototype](#__proto__會去指向此實體所屬物件的-prototype)
@@ -282,12 +281,68 @@ getAll().then((data) => {
 
 ## This
 
-### 指向"當前作用域的實體"
+參考文章: https://github.com/aszx87410/blog/issues/39
 
-**在網頁的最外層實體就是從 Window 開始**
+指向當前作用域的實體
 
+```js
+console.log(this); // 在瀏覽器的話，會是 window 物件；nodejs 的話會是 global
 ```
-console.log(this) // window物件
+
+function 內的 this 可用 bind、apply 、call 來改變 this 的值；也會根據呼叫方式而改變
+
+文章重點
+
+> this 的值會根據你怎麼呼叫它而變得不一樣，call、apply 、bind 就是其中一個範例，你可以用不同的方式去呼叫 function，讓 this 的值變得不同
+> 所以你要很清楚知道這是兩種完全不同的運行模式，一個是靜態（作用域）、一個是動態（this）。要看作用域，就看這個函式在程式碼的「哪裡」；要看 this，就看這個函式「怎麽」被呼叫。
+
+文章內的判斷 this 的小撇步
+
+> 其實我們可以把所有的 function call，都轉成利用 call 的形式來看，以下面那個例子來說，會是這樣
+> obj.hello.call(obj)
+> hey.call()
+> 轉成這樣子的形式之後，還記得 call 的第一個參數就是 this 嗎？所以你就能立刻知道 this 的值是什麼了！
+> 下面較複雜的例子轉換會是
+> obj.inner.hello.call(obj.inner) => 2
+> obj2.hello.call(obj2) => 2
+> hello.call() => undefined
+
+簡易範例
+
+```js
+const obj = {
+  value: 1,
+  hello: function () {
+    console.log(this.value);
+  },
+};
+
+obj.hello(); // 1
+const hey = obj.hello;
+hey(); // undefined
+```
+
+較複雜範例
+
+```js
+const obj = {
+  value: 1,
+  hello: function () {
+    console.log(this.value);
+  },
+  inner: {
+    value: 2,
+    hello: function () {
+      console.log(this.value);
+    },
+  },
+};
+
+const obj2 = obj.inner;
+const hello = obj.inner.hello;
+obj.inner.hello(); // 2
+obj2.hello(); // 2
+hello(); // undefined
 ```
 
 ## Prototype & **proto**
